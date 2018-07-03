@@ -168,6 +168,7 @@ grep <pattern> <target file or glob>
 ```
 
 ## [Make HTTP requests in bash with `curl`](https://egghead.io/lessons/http-make-http-requests-in-bash-with-curl)
+The test server is available in the `curl-practice-server` directory. Run `npm install && npm start` to run it.
 ```bash
 curl <url>
 # Useful flags
@@ -180,16 +181,16 @@ curl <url>
 
 # to POST JSON
 # (technically you don't need -X POST because -d will make it POST automatically, but I like to be explicit)
-curl -X POST <url> -H "Content-Type: application/json" -d '{ "title": "Curling" }'
+curl -X POST -H "Content-Type: application/json" -d '{ "title": "Curling" }' http://localhost:3000/api/posts
 
 # POST a url encoded form
-curl -X POST <url> --data-urlencode title="Curling again"
+curl -X POST --data-urlencode title="Curling again" http://localhost:3000/api/posts
 
 # multiline curl (applies to any bash command)
 curl -i -X PUT \
 -d '{ "title": "Changed title" }' \
 -H "Content-Type: application/json" \
-<url>
+http://localhost:3000/api/posts
 
 # pretty print JSON with jsome
 curl https://swapi.co/api/people/1/ | jsome
