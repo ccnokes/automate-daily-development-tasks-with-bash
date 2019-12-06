@@ -87,7 +87,7 @@ open <file/folder name>
 # view current directory in Finder
 open .
 # specify an application to use
-open -a TextEdit <file name>
+open <file name> -a TextEdit
 ```
 
 ## [Create and delete files and folders](https://egghead.io/lessons/bash-create-and-delete-files-and-folders-in-bash)
